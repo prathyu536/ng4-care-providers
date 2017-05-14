@@ -1,10 +1,10 @@
-import { Ng4CareProvidersPage } from './app.po';
+import { NgCareProvidersPage } from './app.po';
 
-describe('ng4-care-providers App', () => {
-  let page: Ng4CareProvidersPage;
+describe('ng-care-providers App', () => {
+  let page: NgCareProvidersPage;
 
   beforeEach(() => {
-    page = new Ng4CareProvidersPage();
+    page = new NgCareProvidersPage();
   });
 
   it('should display message saying app works', () => {

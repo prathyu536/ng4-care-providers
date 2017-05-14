@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Ng4CareProvidersPage {
+export class NgCareProvidersPage {
   navigateTo() {
     return browser.get('/');
   }
