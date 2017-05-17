@@ -19,9 +19,12 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 // Set our api routes
 app.use('/api', api);
+debugger;
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
+  debugger;
+  console.log(__dirname);
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
