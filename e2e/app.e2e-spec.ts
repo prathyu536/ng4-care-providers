@@ -1,10 +1,10 @@
-import { NgCareProvidersPage } from './app.po';
+import { ShoukathAppPage } from './app.po';
 
-describe('ng-care-providers App', () => {
-  let page: NgCareProvidersPage;
+describe('shoukath-app App', () => {
+  let page: ShoukathAppPage;
 
   beforeEach(() => {
-    page = new NgCareProvidersPage();
+    page = new ShoukathAppPage();
   });
 
   it('should display message saying app works', () => {

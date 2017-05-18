@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class NgCareProvidersPage {
+export class ShoukathAppPage {
   navigateTo() {
     return browser.get('/');
   }
