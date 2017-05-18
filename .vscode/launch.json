@@ -7,7 +7,30 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Nodemon",
+      "runtimeExecutable": "nodemon",
+      "runtimeArgs": [
+        "--debug=5858"
+      ],
+      "program": "${workspaceRoot}/server/server.ts",
+      "restart": true,
+      "port": 5858,
+      "sourceMaps": true,
+      "preLaunchTask": "tsc",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "outFiles": [
+        "${workspaceRoot}/dist/**/*.js"
+      ],
+      "env": {
+          "NODE_ENV": "dev",
+          "LOG_LEVEL": "debug"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Node",
       "program": "${workspaceRoot}/server/server.ts",
       "cwd": "${workspaceRoot}",
       "outFiles": [
@@ -19,14 +42,6 @@
           "NODE_ENV": "dev",
           "LOG_LEVEL": "debug"
       }
-    },
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "Attach to Process",
-      "port": 5858,
-      "outFiles": [],
-      "sourceMaps": true
     }
   ]
 }

@@ -16,10 +16,12 @@ export class AppComponent {
 
   onCreateUser():void {
     let headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Content-Type', 'application/json');
 
 
-  	this.http.post("userslist", this.user, {
+  	this.http.post("userslist", {
+      data: this.user
+    }, {
       headers: headers
     })
   	.map(res => res.json())

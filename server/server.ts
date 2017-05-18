@@ -16,6 +16,7 @@ const db = mongoose.connect('mongodb://127.0.0.1:27017/userslist');
 // Get our API routes
 const api = require('./routes/api');
 const config = require('./config/env');
+const User = require('./models/user.model');
 
 const app = express();
 
@@ -23,8 +24,8 @@ let env = process.env.NODE_ENV;
 env = _.isString(env) ? env.trim() : 'dev';
 
 // Parsers for POST data
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Point static path to dist
 const _wd = config.env[env];
@@ -41,11 +42,24 @@ app.get('*', (req, res) => {
 
 
 app.post('/userslist', function (req, res) {
-  console.log(req);
-  db.userslist.insert(req.body, function(err, doc) {
-    res.json(doc);
+
+  const body: any = req.body.data;
+  const user = new User({
+      fname: body.fname
+    , lname: body.lname
+    , age: body.age
+    , active: body.active || true
+    , date: new Date()
   });
-  console.log(req.body);
+
+  const sc = res.statusCode;
+  user.save(function (err, post, next) {
+    if (err) { return next(err); }
+    res.json({
+      data: post,
+      statusCode: sc
+    });
+  });
 });
 
 app.get('/userslist', function (req, res) {
