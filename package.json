@@ -8,6 +8,7 @@
     "start": "pm2 start dist/server.js --no-daemon",
     "build-start": "npm run build && npm start",
     "dev": "set NODE_ENV=dev && concurrently \"ng serve --progress false --proxy-config proxy.conf.json\" \"npm run api\" ",
+    "prod": "set NODE_ENV=prod && npm run build && cd dist && nodemon server.js",
     "api": "cd server && nodemon --ext ts --ignore *.spec.ts --exec ts-node server",
     "test": "concurrently \"ng test --progress false\" \"npm run test-server\" ",
     "test-ng": "ng test",
@@ -15,6 +16,7 @@
     "test-api": "cd server && nodemon --ext ts --exec jasmine-ts **/*.api.spec.ts",
     "lint": "ng lint",
     "debug-node": "set NODE_ENV=prod && npm run build && cd dist && iron-node server.js",
+    "start-client": "ng serve --progress false --proxy-config proxy.conf.json",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -27,6 +29,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@types/lodash": "^4.14.64",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
@@ -35,6 +38,7 @@
     "express": "^4.14.0",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
+    "mongojs": "^2.4.0",
     "mongoose": "^4.7.2",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"

@@ -1,3 +1,27 @@
+<!-- 
 <div class="alert alert-success">
   {{title}}
 </div>
+ -->
+
+ <div class="container">
+ 	<div class="row">
+ 		<div class="col-md-6 text-center" style="padding-top: 25px;">
+ 			<form class="form-horizontol" (submit)="onCreateUser()">
+ 				<div class="form-group">
+ 					<label class="control-label pull-left">First Name:</label>
+ 					<input type="text" class="form-control" [(ngModel)]="user.fname" name="fname">
+ 				</div>
+ 				<div class="form-group">
+ 					<label class="control-label pull-left">Last Name:</label>
+ 					<input type="text" class="form-control" [(ngModel)]="user.lname" name="lname">
+ 				</div>
+ 				<div class="form-group">
+ 					<label class="control-label pull-left">Age:</label>
+ 					<input type="number" class="form-control" [(ngModel)]="user.age" name="age">
+ 				</div>
+ 				<button type="submit" class="btn btn-block btn-danger">Create User</button>
+ 			</form>
+ 		</div>
+ 	</div>
+ </div>
