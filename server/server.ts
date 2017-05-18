@@ -1,4 +1,5 @@
 // Get dependencies
+import * as _ from 'lodash';
 import * as express from 'express';
 
 const path = require('path');
@@ -7,25 +8,28 @@ const bodyParser = require('body-parser');
 
 // Get our API routes
 const api = require('./routes/api');
+const config = require('./config/env');
 
 const app = express();
+
+let env = process.env.NODE_ENV;
+env = _.isString(env) ? env.trim() : 'dev';
 
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'views')));
+let _wd = config.env[env];
+app.use(express.static(path.join(__dirname, _wd)));
 
 // Set our api routes
 app.use('/api', api);
-debugger;
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  debugger;
-  console.log(__dirname);
-  res.sendFile(path.join(__dirname, 'views/index.html'));
+  let _currFp = config.env[env] + '/index.html';
+  res.sendFile(path.join(__dirname, _currFp));
 });
 
 /**
