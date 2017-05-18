@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  private user:Object = {};
+  private resp:any = "";
+  private title:string = 'App Works!';
+
+  constructor(private http: Http) {}
+
+  onCreateUser():void {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+
+  	this.http.post("userslist", this.user, {
+      headers: headers
+    })
+  	.map(res => res.json())
+    .subscribe(
+      data => console.log(data),
+      err => console.log(err),
+      () => console.log('Authentication Complete')
+    );
+  }
 }
