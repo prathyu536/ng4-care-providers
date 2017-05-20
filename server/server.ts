@@ -28,46 +28,13 @@ app.use(express.static(path.join(__dirname, _wd)));
 
 // Set our api routes
 app.use('/api', api);
-// Server.setFileDest('/userslist');
 
 // Catch all other routes and return the index file
-// app.get('*', (req, res) => {
-//   const _currFp = config.env[env] + '/index.html';
-//   res.sendFile(path.join(__dirname, _currFp));
-// });
+app.get('*', (req, res) => {
+  const _currFp = config.env[env] + '/index.html';
+  res.sendFile(path.join(__dirname, _currFp));
+});
 
-
-// @Path('/userslist')
-// class UserService {
-
-//   @POST
-//   saveUser(
-//       @ContextRequest req: express.Request,
-//       @ContextResponse res: express.Response): Return.NewResource<any> {
-
-//     const body: any = req.body.data;
-//     const user = new User({
-//           fname: body.fname
-//         , lname: body.lname
-//         , age: body.age
-//         , active: body.active || true
-//         , date: new Date()
-//     });
-
-//     return user.save(function (err, post, next) {
-//         if (err) { return next(err); }
-//         return new Return.NewResource<any>(null, {
-//             data: post._doc
-//         });
-//     });
-//   }
-
-//   @GET
-//   @Path(':name')
-//   sayHello( @PathParam('name') name: string): string {
-//     return `Hello ${name}`;
-//   }
-// }
 Server.buildServices(app, ...CareProviderApis);
 
 app.listen(3000, () => {
