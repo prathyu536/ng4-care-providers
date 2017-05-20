@@ -17,10 +17,4 @@ const UserSchema: mongoose<Schema> = new Schema(
   }
 }));
 
-// export class User {
-//   get(): mongoose<Schema> {
-//     return mongoose.model('User', UserSchema);
-//   }
-// }
-
 export default mongoose.model('User', UserSchema);

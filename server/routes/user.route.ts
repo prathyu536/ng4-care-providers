@@ -25,7 +25,6 @@ export class UserService {
         , active: body.active || true
         , date: new Date()
     });
-
     return this.helper.add(user);
   }
 
