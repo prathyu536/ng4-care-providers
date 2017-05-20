@@ -19,17 +19,17 @@ export class AppComponent {
     headers.append('Content-Type', 'application/json');
 
 
-    // this.http.post('userslist', {
-    //   data: this.user
-    // }, {
-    //   headers: headers
-    // })
-    // .map(res => res.json())
-    // .subscribe(
-    //   data => console.log(data),
-    //   err => console.log(err),
-    //   () => console.log('Request Completed')
-    // );
+    this.http.post('userslist', {
+      data: this.user
+    }, {
+      headers: headers
+    })
+    .map(res => res.json())
+    .subscribe(
+      data => console.log(data),
+      err => console.log(err),
+      () => console.log('Request Completed')
+    );
 
     // this.http.put('userslist/591faf30f804c0272c2ddec8', {
     //   data: this.user
@@ -43,12 +43,12 @@ export class AppComponent {
     //    () => console.log('Request Completed')
     //  );
 
-    this.http.delete('userslist/591faf30f804c0272c2ddec8')
-    .map(res => res.json())
-    .subscribe(
-       data => console.log(data),
-       err => console.log(err),
-       () => console.log('Request Completed')
-     );
+    // this.http.delete('userslist/591faf30f804c0272c2ddec8')
+    // .map(res => res.json())
+    // .subscribe(
+    //    data => console.log(data),
+    //    err => console.log(err),
+    //    () => console.log('Request Completed')
+    //  );
   }
 }

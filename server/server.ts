@@ -11,7 +11,7 @@ const app: express.Application = express();
 const db = mongoose.connect('mongodb://127.0.0.1:27017/userslist');
 
 // get our API routes
-const api = require('./routes/api');
+// const api = require('./routes/api');
 const config = require('./config/env');
 const User = require('./models/user.model');
 
@@ -27,13 +27,13 @@ const _wd = config.env[env];
 app.use(express.static(path.join(__dirname, _wd)));
 
 // Set our api routes
-app.use('/api', api);
+// app.use('/api', api);
 
 // Catch all other routes and return the index file
-app.get('*', (req, res) => {
-  const _currFp = config.env[env] + '/index.html';
-  res.sendFile(path.join(__dirname, _currFp));
-});
+// app.get('*', (req, res) => {
+//   const _currFp = config.env[env] + '/index.html';
+//   res.sendFile(path.join(__dirname, _currFp));
+// });
 
 Server.buildServices(app, ...CareProviderApis);
 
