@@ -1,8 +1,8 @@
-let config  = {
-	env: {
-		dev: '/../client/',
-		prod: 'views'
-	}
+const _config  = {
+    env: {
+      dev: '/../client/',
+      prod: 'views'
+   }
 };
 
-module.exports = config;
+module.exports = _config;
