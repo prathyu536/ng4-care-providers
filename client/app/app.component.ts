@@ -1,6 +1,7 @@
+import 'rxjs/add/operator/map';
 import { Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,17 @@ export class AppComponent {
   private resp: any = '';
   private title: String = 'App Works!';
 
-  constructor(private http: Http) {}
+  constructor(
+    private http: Http,
+    public translate: TranslateService) {
+       // this language will be used as a fallback 
+       // when a translation isn't found in the current language
+       translate.setDefaultLang('en');
+
+       // the lang to use, if the lang isn't available, 
+       // it will use the current loader to get them
+       translate.use('en');
+    }
 
   onCreateUser(): void {
     const headers = new Headers();

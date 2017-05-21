@@ -1,7 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { I18nModule } from './app.translate.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
@@ -10,9 +12,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    I18nModule,
+    HttpModule,
     FormsModule,
-    HttpModule
+    BrowserModule,
+    TranslateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
