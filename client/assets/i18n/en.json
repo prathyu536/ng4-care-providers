@@ -1,0 +1,8 @@
+{
+    "labels" : {
+        "fname": "First Name",
+        "lname": "Last Name",
+        "age": "Age",
+        "createUser": "Create User"
+    }
+}
