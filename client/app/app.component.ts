@@ -29,7 +29,6 @@ export class AppComponent {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-
     this.http.post('userslist', {
       data: this.user
     }, {

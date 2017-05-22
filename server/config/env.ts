@@ -1,7 +1,13 @@
 const _config  = {
     env: {
-      dev: '/../client/',
-      prod: 'views'
+      dev: {
+        clientPath: '/../client/',
+        db: 'mongodb://127.0.0.1:27017/userslist'
+      },
+      prod: {
+        clientPath: 'views',
+        db: 'mongodb://127.0.0.1:27017/userslist'
+      }
    }
 };
 
