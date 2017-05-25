@@ -8,7 +8,7 @@ headers.append('Content-Type', 'application/json');
 
 @Injectable()
 export class HomeService {
-    private _url: any = 'userslist';
+    private _url: any = 'v2/users';
 
     constructor(private http: Http) {}
 
