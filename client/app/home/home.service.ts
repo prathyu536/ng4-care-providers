@@ -30,9 +30,7 @@ export class HomeService {
     editUser(_id: string, _user: object): Observable<any>  {
         const _url = this._url + '/' + _id;
         return this.http
-        .put(_url, {
-           data: _user
-        }, {
+        .put(_url, {data: _user}, {
            headers: headers
         })
         .map(res => res.json());
