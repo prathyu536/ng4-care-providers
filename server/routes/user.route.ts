@@ -8,7 +8,7 @@ import {Server, Path, POST, GET, PUT, DELETE, PathParam, ContextRequest, Context
 /**
  * @author: Shoukath Mohammed
  */
-@Path('/userslist')
+@Path('/v2/users')
 export class UserService {
   public helper: RouteHelper = new RouteHelper();
 
