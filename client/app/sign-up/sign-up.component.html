@@ -1,0 +1,93 @@
+<div class="container">
+	<div class="row">
+		<h2 class="space">Personal Information</h2>
+		<div class="col-lg-12 text-center" style="padding-top: 25px;">
+			<form class="form-horizontol" (submit)="onUserSignUp()">
+
+				<div class="form-group">
+					<label class="control-label pull-left">First Name: </label>
+					<input type="text" placeholder="Enter FirstName" class="form-control" [(ngModel)]="user1.firstname" name="firstname">
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="control-label pull-left">Middle Name: </label>
+					<input type="text" placeholder="Enter MiddleName" class="form-control" [(ngModel)]="user1.middlename" name="middlename">
+
+
+				</div>
+
+
+				<div class="form-group">
+					<label class="control-label pull-left">Last Name:</label>
+					<input type="text" placeholder=" Enter LastName" class="form-control" [(ngModel)]="user1.lastname" name="lastname">
+				</div>
+
+				<div class="form-group">
+					<label class="control-label pull-left" for="gender1">Gender</label>
+					<select class="form-control" id="gender1" [(ngModel)]="user1.gender" name="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+				</div>
+				<div class="form-group">
+					<label class="control-label pull-left">E-Mail: </label>
+					<input type="text" placeholder="Enter Email" class="form-control" [(ngModel)]="user1.email" name="email">
+				</div>
+
+
+
+
+				<div class="form-group">
+					<label class="control-label pull-left">Password: </label>
+					<input type="password" placeholder="Enter Password" class="form-control" [(ngModel)]="user1.pwd" name="pwd">
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="control-label pull-left">Confirm Password:</label>
+					<input type="password" placeholder="Re-Enter password" class="form-control" [(ngModel)]="user1.cpwd" name="cpwd">
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="control-label pull-left">Contact No: </label>
+					<input type="number" placeholder="Enter Contact Number" class="form-control" [(ngModel)]="user1.number" name="number">
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="control-label pull-left">DOB </label>
+					<input type="date" class="form-control" [(ngModel)]="user1.dob" name="dob">
+
+				</div>
+
+				<button type="submit" class="btn btn-block btn-success">Register</button>
+
+
+			</form>
+		</div>
+
+
+		<!--
+ 				<div class="form-group">
+ 					<label class="control-label pull-left">First Name:</label>
+ 					<input type="text" class="form-control" [(ngModel)]="user.firstname" name="firstname">
+ 				</div>
+ 				<div class="form-group">
+ 					<label class="control-label pull-left">Last Name:</label>
+ 					<input type="text" class="form-control" [(ngModel)]="user.lastname" name="lastname">
+ 				</div>
+ 				<div class="form-group">
+ 					<label class="control-label pull-left">Age:</label>
+ 					<input type="number" class="form-control" [(ngModel)]="user.age" name="age">
+ 				</div>
+ 				<button type="submit" class="btn btn-block btn-danger">Create User</button>
+ 			</form>
+ 		</div>
+ 	</div>
+ </div>-->

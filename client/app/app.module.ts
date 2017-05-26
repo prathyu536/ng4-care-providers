@@ -10,13 +10,16 @@ import { AppRoutingModule } from './app.routing.module';
 // import components here
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignUpModule } from './sign-up/sign-up.module';
 
 // import directives/pipes here
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SignUpComponent
   ],
   imports: [
     I18nModule,
@@ -24,9 +27,10 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     BrowserModule,
     TranslateModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SignUpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,SignUpComponent]
 })
 export class AppModule { }
