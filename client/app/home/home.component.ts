@@ -12,15 +12,14 @@ import { Http, Headers } from '@angular/http';
 
 export class HomeComponent {
     private resp: any = '';
-    private user: object = {};
     private title: String = 'This is a home page.';
 
     constructor(private http: Http,
         private homeService: HomeService) { }
 
-    onCreateUser(): void {
+    onCreateUser(value: Object): void {
         this.homeService
-            .createUser(this.user).subscribe(
+            .createUser(value).subscribe(
             data => console.log(data),
             err => console.log(err),
             () => console.log('Request Completed')
