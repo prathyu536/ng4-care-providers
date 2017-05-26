@@ -1,28 +1,46 @@
-# NgCareProviders
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+# NgCareProviders [![Build Status](https://travis-ci.org/Mohammed9531/ng4-care-providers.svg?branch=master)](https://travis-ci.org/Mohammed9531/ng4-care-providers)
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Step 1
+Start your mongodb by running the command below:
 
-## Code scaffolding
+```bash
+$ mongod
+```
+### Step 2
+Start the development server by running the command below. This will start 2 servers concurrently, client-side code on `4200` & server-side on `3000` port. Port `4200` listens to the backend server through the proxy configuration.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+```bash
+$ npm run dev
+```
+### Step 3
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Production server
+Start the production server by running the command below. This will build the project followed by starting the production server.
+
+```bash
+$ npm run prod
+```
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```bash
+$ npm run build
+```
+This will generate a production code in the `dist` directory.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+$ npm run test-ng
+```
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+```bash
+$ npm run e2e
+```
 
 ## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Contact the `dev team` or the `collaborators`.
