@@ -12,3 +12,6 @@ script:
   - 'npm run dev'
 env:
   - NODE_ENV=dev
+
+services: 
+  - mongodb
