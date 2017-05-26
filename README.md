@@ -2,19 +2,19 @@
 
 ## Development server
 
-### Step 1
+#### Step 1
 Start your mongodb by running the command below:
 
 ```bash
 $ mongod
 ```
-### Step 2
+#### Step 2
 Start the development server by running the command below. This will start 2 servers concurrently, client-side code on `4200` & server-side on `3000` port. Port `4200` listens to the backend server through the proxy configuration.
 
 ```bash
 $ npm run dev
 ```
-### Step 3
+#### Step 3
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Production server
