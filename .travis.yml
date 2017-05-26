@@ -9,7 +9,6 @@ after_script:
   - 'mongod stop'
 script:
   - 'npm run build'
-  - 'npm run test'
 env:
   - NODE_ENV=dev
 
