@@ -1,16 +1,22 @@
 <h3>{{title}}</h3>
-<form class="form-horizontol" (submit)="onCreateUser()">
-  <div class="form-group">
+<form class="form-horizontol" #f="ngForm" (ngSubmit)="onCreateUser(f.value)" novalidate>
+  <div class="form-group" [ngClass]="{'has-error': fname.errors?.required && fname.touched}">
     <label class="control-label pull-left">{{ 'labels.fname' | translate}}</label>
-    <input type="text" class="form-control" [(ngModel)]="user.fname" name="fname">
+    <input type="text" class="form-control" name="fname" required #fname="ngModel" ngModel>
+    <span class="text-danger pull-left small" *ngIf="fname.errors?.required && fname.touched">First Name is required.</span>
+    <div class="clearfix"></div>
   </div>
-  <div class="form-group">
+  <div class="form-group" [ngClass]="{'has-error': lname.errors?.required && lname.touched}">
     <label class="control-label pull-left">Last Name:</label>
-    <input type="text" class="form-control" [(ngModel)]="user.lname" name="lname">
+    <input type="text" class="form-control" name="lname" required #lname="ngModel" ngModel>
+    <span class="text-danger pull-left small" *ngIf="lname.errors?.required && lname.touched">Last Name is required.</span>
+    <div class="clearfix"></div>
   </div>
-  <div class="form-group">
+  <div class="form-group" [ngClass]="{'has-error': age.errors?.required && age.touched}">
     <label class="control-label pull-left">Age:</label>
-    <input type="number" class="form-control" [(ngModel)]="user.age" name="age">
+    <input type="number" class="form-control" name="age" required #age="ngModel" ngModel>
+    <span class="text-danger pull-left small" *ngIf="age.errors?.required && age.touched">Age is required.</span>
+    <div class="clearfix"></div>
   </div>
-  <button type="submit" class="btn btn-block btn-danger">Create User</button>
+  <button type="submit" class="btn btn-block btn-danger" [disabled]="f.invalid">Create User</button>
 </form>
