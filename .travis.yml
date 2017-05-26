@@ -1,5 +1,14 @@
 language: node_js
+dist: trusty
 node_js:
-  - 0.12
+  - 7.2.0
+before_script:
+  - 'npm install -g npm@latest typescript ts-node concurrently nodemon'
+  - 'npm install'
+script:
+  - 'npm run build'
+  - 'npm run prod'
+  - 'npm run api'
+  - 'npm run dev'
 env:
-- NODE_ENV=DEV
+  - NODE_ENV=dev
