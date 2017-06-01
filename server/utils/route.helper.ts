@@ -8,8 +8,8 @@ import {Return} from 'typescript-rest';
 export class RouteHelper {
 
   add(col: mongoose<collection>, cb?: Function): Return.NewResource<any> {
-    return col.save((err, doc, next) => {
-        if (err) { return next(err); }
+    return col.save((err, doc) => {
+        if (err) { return err; }
         return new Return.NewResource<any>(null,
         cb ? cb(doc)
            : {

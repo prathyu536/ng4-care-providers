@@ -31,6 +31,6 @@ import { SignUpModule } from './sign-up/sign-up.module';
     SignUpModule
   ],
   providers: [],
-  bootstrap: [AppComponent,SignUpComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

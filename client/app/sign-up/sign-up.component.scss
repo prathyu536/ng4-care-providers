@@ -11,3 +11,15 @@
     text-align:center;
     padding-top: 2px;
 }
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+.ng-valid[required], .ng-valid.ng-valid[required]{
+    border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form){
+    border-left: 5px solid #A94442;
+}

@@ -8,7 +8,7 @@ import {Server, Path, POST, GET, PUT, DELETE, PathParam, ContextRequest, Context
 /**
  * @author: Shoukath Mohammed
  */
-@Path('/registrationlist')
+@Path('/v2/registrationlist')
 export class SignUpService {
   public helper: RouteHelper = new RouteHelper();
 
@@ -17,10 +17,22 @@ export class SignUpService {
       @ContextRequest req: express.Request,
       @ContextResponse res: express.Response): Return.NewResource<any> {
 
+    //let test: Object = {};
     const body: any = req.body.data;
+    //const mapperArr: Array<any> = ['firstname', 'lastname'];
+
+    // _.each(mapperArr, (k) => {
+    //   test[k] = body[k];
+    // });
+    
+    // obj
+    //const user2 = new User1(test);
+
+
+
+    //body.dob = new String(body.dob);
     const user1 = new User1({
           firstname: body.firstname
-        , middlename: body.middlename
         , lastname: body.lastname
         , gender: body.gender
         , email: body.email
@@ -28,6 +40,12 @@ export class SignUpService {
         , cpwd: body.cpwd
         , number: body.number
         , dob: body.dob
+        , address1: body.address1
+        , address2: body.address2
+        , city: body.city
+        , state: body.state
+        , country: body.country
+        , zipcode: body.zipcode
         , active: body.active || true
         , date: new Date()
     });
